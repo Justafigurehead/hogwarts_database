@@ -1,0 +1,32 @@
+
+<h1>Edit</h1>
+
+
+<form action = "/students/<%= @student.id %>" method= "post">
+  <label>
+    First name:
+    <input type = "text" name="first_name" value = "<%= @student.first_name %>"/>
+  </label>
+  <br /><br />
+  <label>
+    Last name:
+    <input type = "text" name = "last_name"  value = "<%= @student.last_name %>" />
+  </label>
+  <br /><br />
+  <label>
+    House: 
+    
+    <select name="house_id">
+    <% for house in @houses %>
+      <option value ="<%= @student.house_id %>"> <%= house.house_name %></option>
+    <% end %>
+    </select>
+  </label>
+  <br /><br />
+  <label>
+    Age: 
+    <input type="number" name="age" value="<%=@student.age %>" required min="0" />
+  </label>
+  <br /><br />
+  <input type ="submit" value= "Edit" />
+</form>

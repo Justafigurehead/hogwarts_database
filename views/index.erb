@@ -1,0 +1,12 @@
+
+<h1>All Students</h1>
+
+<% for student in @students %>
+  <div class="student">
+    <p><strong>Full name:</strong> <%= student.student_name %> </p>
+    <p><strong>Age:</strong> <%= student.age %></p>
+    <p><strong>House:</strong> <%= student.house.house_name %></p>
+    <p id = "details_link"> <a href="/students/<%= student.id %>">Click for more detail</a></p>    
+  </div>
+
+<% end %> 
